@@ -1,18 +1,44 @@
 * text=auto
 
-# Language detection
+# Language Detection & Statistics
+# This repository is primarily Rust with supporting configuration and documentation
+# GitHub will automatically calculate and display language percentages based on these rules
+
+# Primary Language
 *.rs linguist-language=Rust
+src/** linguist-language=Rust
+tests/** linguist-language=Rust
+
+# Configuration & Build Files
 *.toml linguist-language=TOML
+Cargo.toml linguist-language=TOML
+Cargo.lock linguist-language=TOML
+
+# Documentation
 *.md linguist-language=Markdown
+README.md linguist-language=Markdown
+WAVE_PLAN.md linguist-language=Markdown
+MEASUREMENTS.md linguist-language=Markdown
+
+# CI/CD & Configuration
 *.yml linguist-language=YAML
 *.yaml linguist-language=YAML
+.github/workflows/* linguist-language=YAML
+
+# Data & Metadata
 *.json linguist-language=JSON
+history.json linguist-language=JSON
+
+# Scripts
 *.ps1 linguist-language=PowerShell
+calibrate_gap.ps1 linguist-language=PowerShell
 
-# Vendored files
+# Vendored & Generated Files (excluded from percentage calculations)
 vendor/ linguist-vendored
+node_modules/ linguist-vendored
 
-# Generated files
-*.wasm linguist-generated=true
+# Build Artifacts & Generated Output (do not count toward language statistics)
 target/ linguist-generated=true
+*.wasm linguist-generated=true
 site/dashboard.html linguist-generated=true
+*.lock linguist-generated=true
